@@ -10,7 +10,7 @@ public class WhatsappService implements MessageService {
 
     // private Repository repository = new DbRepository(); // sıkı bir bağımlılık
 
-    private Repository repository;
+    private Repository repository; // Dependency injection
 
     public WhatsappService(Repository repository) { // Bağımlılığı başlangıçta vermeyip daha sonra enjekte ediyoruz.
         this.repository = repository;

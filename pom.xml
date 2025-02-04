@@ -17,7 +17,7 @@
     </properties>
 
     <dependencies>
-        <!--spring-context (bir spring uygulaması için gerekli ve yeterlidir.)-->
+        <!--spring-context (bir spring uygulaması için gerekli ve yeterlidir. Core Contenyer oluşturur.)-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>

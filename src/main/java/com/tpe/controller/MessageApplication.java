@@ -29,21 +29,20 @@ public class MessageApplication {
         service.sendMessage(message);
         service.saveMessage(message);
 
-        MessageService service2 = new MailService(repository);
-        service2.sendMessage(message);
-        service2.saveMessage(message);
+        MessageService service02 = new MailService(repository);
+        service02.sendMessage(message);
+        service02.saveMessage(message);
 
-        // Objeler arasındaki bağımlılığı gevşetmek için
-        //   1-ref olarak interface
-        //   2-bağımlılığı doğrudan vermek yerine daha
-        //   sonra parametreli constructor(veya setter metodu) ile verdik
+        // Objeler arasındaki bağımlılığı gevşetmek
+        //  1- Doğrudan concrete class'ları kullanmak yerine referans olarak interface kullandık
+        //  2- Bağımlılığı doğrudan vermek yerine daha sonra parametreli constructor(veya setter metodu) ile verdik
 
         // Problem:
-        // 1-objeleri biz oluşturuyoruz
-        // 2-objelerin bağımlılıklarını biz manuel olarak enjekte etmek zorundayız
+        // 1- Objeleri biz oluşturuyoruz. (2. bir service objesi gerektiğinde biz oluşturmak zorunda kalıyoruz.)
+        // 2- Objelerin bağımlılıklarını biz manuel olarak enjekte etmek zorundayız.
 
         // Çözüm:
         // Spring is COMING:)
-        // IoC,DI
+        // IoC (Spring objeleri oluşturacak ve yönetecek), DI
     }
 }
