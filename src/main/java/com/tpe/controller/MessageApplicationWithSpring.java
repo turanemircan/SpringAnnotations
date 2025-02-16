@@ -73,10 +73,15 @@ public class MessageApplicationWithSpring {
             System.out.println(service07);
         }
 
-        context.close();
-
         // prototype olan beani sonlandırmak için
         context.getBeanFactory().destroyBean(service06);
+
+        SlackService service08 = context.getBean(SlackService.class);
+        service08.printContact();
+        System.out.println("---------------------------------------");
+        service08.getContact();
+
+        context.close();
 
         // Contex'i kapatıktan sonra beanlere ulaşamayız.
 //        SmsService service = context.getBean(SmsService.class);
